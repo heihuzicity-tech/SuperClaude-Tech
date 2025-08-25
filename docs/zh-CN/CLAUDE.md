@@ -239,23 +239,57 @@ Token Efficiency模式:  # ⚡ 压缩通信
 
 ---
 
+## 🔧 工作流规则提示
+
+### 根据官方RULES.md的最佳实践
+```yaml
+TodoWrite规则:
+  触发条件: "任务步骤 > 3"
+  提示文本: "建议使用TodoWrite管理任务进度"
+  
+并行操作提示:
+  识别: "多个独立的读取/分析操作"
+  建议: "这些操作可以并行执行以提升效率"
+  示例: "并行: [Read 5 files] → 分析 → 并行: [Edit all files]"
+  
+会话管理:
+  长任务提示: "建议使用 /sc:save 保存进度"
+  恢复提示: "可以使用 /sc:load 恢复之前的工作"
+  
+安全模式:
+  生产环境: "检测到生产相关任务，建议添加 --safe-mode"
+  测试要求: "关键功能建议添加 --with-tests"
+```
+
+---
+
 ## 💡 智能转换示例库
+
+### 核心示例（展示官方最佳实践）
 
 ### 示例1：性能问题
 **输入**："我的网站加载很慢"
 
 **🎓 转换结果**：
 ```bash
-/sc:troubleshoot "网站加载性能问题" @agent-performance-engineer @agent-frontend-architect --seq --play --think-hard
+/sc:troubleshoot "网站加载性能问题" @agent-performance-engineer @agent-frontend-architect @agent-root-cause-analyst --seq --play --ultrathink
 ```
+💡 **附加建议**：
+- 任务复杂度：0.75（建议Wave模式）
+- 并行操作：可并行分析前端和后端性能指标
+- TodoWrite：建议创建任务列表追踪优化进度
 
 ### 示例2：安全功能
 **输入**："实现一个用户登录系统"
 
 **🎓 转换结果**：
 ```bash
-/sc:implement "JWT用户认证系统" @agent-security-engineer @agent-backend-architect --c7 --safe-mode --with-tests
+/sc:implement "JWT用户认证系统" @agent-security-engineer @agent-backend-architect --c7 --safe-mode --with-tests --validate
 ```
+💡 **附加建议**：
+- 安全关键功能：已自动添加 --safe-mode 和 --validate
+- 测试覆盖：包含单元测试和集成测试
+- 会话管理：实现后建议 /sc:save 保存配置
 
 ### 示例3：UI组件
 **输入**："做一个响应式的导航栏"
@@ -270,16 +304,82 @@ Token Efficiency模式:  # ⚡ 压缩通信
 
 **🎓 转换结果**：
 ```bash
-/sc:analyze . @agent-quality-engineer @agent-refactoring-expert --seq --think-hard --focus quality
+/sc:analyze . @agent-quality-engineer @agent-refactoring-expert @agent-system-architect --seq --ultrathink --focus quality --systematic
 ```
+💡 **附加建议**：
+- 复杂度：0.8（推荐Wave模式）
+- 建议添加：--wave-mode force --wave-strategy systematic
+- 并行分析：可同时检查多个模块的质量指标
 
 ### 示例5：架构设计
 **输入**："设计一个微服务架构"
 
 **🎓 转换结果**：
 ```bash
-/sc:design "微服务架构系统" @agent-system-architect @agent-devops-architect --seq --c7 --think-hard
+/sc:design "微服务架构系统" @agent-system-architect @agent-devops-architect --seq --c7 --ultrathink --wave-mode auto --wave-strategy systematic
 ```
+
+### 高级示例（展示更多官方标志）
+
+### 示例6：企业级重构
+**输入**："重构整个遗留系统"
+
+**🎓 转换结果**：
+```bash
+/sc:improve "遗留系统重构" @agent-refactoring-expert @agent-system-architect @agent-quality-engineer --wave-mode force --wave-strategy enterprise --ultrathink --systematic --with-tests --preview
+```
+💡 **附加建议**：
+- 复杂度：0.95（企业级Wave模式）
+- 使用 --preview 先预览更改
+- 建议分阶段执行，每阶段使用 /sc:save
+
+### 示例7：紧急Bug修复
+**输入**："生产环境内存泄漏紧急修复"
+
+**🎓 转换结果**：
+```bash
+/sc:troubleshoot "生产环境内存泄漏" @agent-performance-engineer @agent-root-cause-analyst --trace --verbose --think-hard --safe-mode
+```
+💡 **附加建议**：
+- 使用 --trace 获取详细跟踪
+- --safe-mode 确保生产安全
+- 修复后立即 /sc:test --coverage
+
+### 示例8：全栈功能开发
+**输入**："开发完整的电商订单系统"
+
+**🎓 转换结果**：
+```bash
+/sc:implement "电商订单系统" @agent-backend-architect @agent-frontend-architect @agent-security-engineer --c7 --magic --safe-mode --with-tests --validate --systematic
+```
+💡 **附加建议**：
+- 完整的质量保证套件
+- 多Agent协作开发
+- 建议使用TodoWrite管理子任务
+
+### 示例9：安全审计
+**输入**："审查整个应用的安全漏洞"
+
+**🎓 转换结果**：
+```bash
+/sc:analyze . @agent-security-engineer @agent-backend-architect --focus security --safe-mode --systematic --validate --trace
+```
+💡 **附加建议**：
+- 使用完整的安全审计套件
+- --trace 记录所有检查步骤
+- 生成详细的安全报告
+
+### 示例10：并行性能优化
+**输入**："同时优化前端渲染和后端API性能"
+
+**🎓 转换结果**：
+```bash
+/sc:improve "全栈性能优化" @agent-performance-engineer @agent-frontend-architect @agent-backend-architect --focus performance --systematic --with-tests --parallel-ops "frontend-optimization,backend-optimization"
+```
+💡 **附加建议**：
+- 明确标注可并行的操作
+- 使用 --systematic 确保全面优化
+- 优化后运行性能测试验证
 
 ---
 
@@ -289,7 +389,7 @@ Token Efficiency模式:  # ⚡ 压缩通信
 ```yaml
 --think:      # 标准分析 (4K tokens)
 --think-hard: # 深度分析 (10K tokens)  
---think-deep: # 全面分析 (32K tokens)
+--ultrathink: # 全面分析 (32K tokens) [官方v4.0.8标准]
 ```
 
 ### 执行控制标志
@@ -309,6 +409,82 @@ Token Efficiency模式:  # ⚡ 压缩通信
 --uc:          # 超压缩模式(Token Efficiency)
 ```
 
+### 调试与跟踪
+```yaml
+--trace:       # 详细跟踪信息，用于调试
+--systematic:  # 系统化方法，全面分析
+--interactive: # 交互式模式，逐步确认
+--preview:     # 预览模式，显示但不执行
+```
+
+---
+
+## 🎯 官方推荐标志组合
+
+### 最佳实践标志组合
+```yaml
+质量保证套件:
+  命令: /sc:implement 或 /sc:build
+  标志: --safe-mode --with-tests --validate
+  用途: "生产级代码，包含完整测试和验证"
+  示例: /sc:implement "支付系统" @agent-security-engineer --safe-mode --with-tests --validate
+
+深度分析套件:
+  命令: /sc:analyze 或 /sc:troubleshoot
+  标志: --seq --ultrathink --systematic
+  用途: "复杂问题的全面系统分析"
+  示例: /sc:troubleshoot "系统崩溃" @agent-root-cause-analyst --seq --ultrathink --systematic
+
+调试诊断套件:
+  命令: /sc:troubleshoot
+  标志: --trace --verbose --think-hard
+  用途: "详细的调试跟踪和问题定位"
+  示例: /sc:troubleshoot "内存泄漏" @agent-performance-engineer --trace --verbose --think-hard
+
+生产部署套件:
+  命令: /sc:build 或 /sc:improve
+  标志: --safe-mode --validate --preview
+  用途: "生产环境的安全部署"
+  示例: /sc:build "生产版本" @agent-devops-architect --safe-mode --validate --preview
+
+性能优化套件:
+  命令: /sc:improve 或 /sc:analyze
+  标志: --focus performance --systematic --with-tests
+  用途: "系统性能优化与验证"
+  示例: /sc:improve "API响应速度" @agent-performance-engineer --focus performance --systematic --with-tests
+
+安全审计套件:
+  命令: /sc:analyze
+  标志: --focus security --safe-mode --systematic --validate
+  用途: "全面的安全漏洞扫描"
+  示例: /sc:analyze . @agent-security-engineer --focus security --safe-mode --systematic --validate
+
+重构优化套件:
+  命令: /sc:improve
+  标志: --focus maintainability --with-tests --preview
+  用途: "代码重构与技术债务清理"
+  示例: /sc:improve . @agent-refactoring-expert --focus maintainability --with-tests --preview
+```
+
+### 场景化标志组合
+```yaml
+紧急修复场景:
+  标志组合: --trace --verbose --think
+  说明: "快速定位和修复紧急问题"
+  
+大规模重构场景:
+  标志组合: --wave-mode force --wave-strategy enterprise --ultrathink --systematic
+  说明: "企业级系统重构"
+  
+新功能开发场景:
+  标志组合: --with-tests --validate --c7 --magic
+  说明: "完整的新功能开发流程"
+  
+性能瓶颈分析场景:
+  标志组合: --seq --trace --focus performance --systematic
+  说明: "深入的性能问题分析"
+```
+
 ---
 
 ## 📊 复杂度评估系统
@@ -318,43 +494,109 @@ Token Efficiency模式:  # ⚡ 压缩通信
 简单 (0.0-0.4):
   特征: "单文件操作、直接任务、明确需求"
   推荐: "单个命令 + 1个代理"
+  Wave: 不需要
   
 中等 (0.4-0.7):
   特征: "多文件操作、需要分析、跨模块"
   推荐: "/sc:命令 + 2-3个代理 + --think"
+  Wave: 可选 (--wave-mode auto)
   
 复杂 (0.7-1.0):
   特征: "系统级变更、架构决策、多领域"
-  推荐: "多命令组合 + 多代理协调 + --think-hard + MCP服务器"
+  推荐: "多命令组合 + 多代理协调 + --ultrathink + MCP服务器"
+  Wave: 推荐 (--wave-mode force --wave-strategy [选择策略])
+```
+
+### Wave模式策略选择
+```yaml
+Wave策略判断逻辑:
+  progressive:  # 渐进式增强
+    触发: "优化任务、性能提升、逐步改进"
+    示例: "逐步优化系统性能"
+    
+  systematic:   # 系统化方法
+    触发: "全面分析、完整实现、系统重构"
+    示例: "构建完整的电商系统"
+    
+  adaptive:     # 自适应配置
+    触发: "需求不明确、探索性任务、迭代开发"
+    示例: "探索最佳架构方案"
+    
+  enterprise:   # 企业级编排
+    触发: "大规模项目、复杂度>0.8、文件>30"
+    示例: "重构整个遗留系统"
 ```
 
 ---
 
 ## 🔄 常用工作流程
 
-### 新项目启动
+### 新项目启动（完整流程）
 ```bash
-/sc:brainstorm "项目概念"           # 需求发现
-/sc:design "系统架构"               # 架构设计
-/sc:workflow "实施计划"             # 计划制定
-/sc:implement "核心功能"            # 功能实现
-/sc:test --coverage                 # 测试验证
+# 1. 需求探索与规划
+/sc:brainstorm "项目概念" @agent-requirements-analyst --interactive
+/sc:estimate "项目规模" @agent-system-architect --think-hard
+
+# 2. 架构设计与验证
+/sc:design "系统架构" @agent-system-architect @agent-devops-architect --seq --c7 --ultrathink
+/sc:workflow "实施计划" @agent-system-architect --systematic
+
+# 3. 核心功能实现
+/sc:implement "核心功能" @agent-backend-architect @agent-frontend-architect --c7 --magic --with-tests --validate
+
+# 4. 质量保证
+/sc:test --coverage --systematic
+/sc:analyze . --focus quality --safe-mode
+
+# 5. 保存项目状态
+/sc:save "项目初始版本"
 ```
 
-### 问题诊断流程
+### 问题诊断流程（生产环境）
 ```bash
-/sc:troubleshoot "问题描述"         # 问题诊断
-/sc:analyze --focus performance      # 性能分析
-@agent-root-cause-analyst "深入分析" # 根因分析
-/sc:improve --type performance       # 性能优化
+# 1. 紧急诊断
+/sc:troubleshoot "问题描述" @agent-root-cause-analyst --trace --verbose --safe-mode
+
+# 2. 深入分析（并行执行）
+/sc:analyze --focus performance @agent-performance-engineer --seq --systematic
+/sc:analyze --focus security @agent-security-engineer --validate
+
+# 3. 修复实施
+/sc:improve --type performance @agent-performance-engineer --preview --safe-mode
+
+# 4. 验证与部署
+/sc:test --coverage --validate
+/sc:build "修复版本" @agent-devops-architect --safe-mode --validate
 ```
 
-### 代码优化流程
+### 代码优化流程（技术债务清理）
 ```bash
-/sc:analyze . --focus quality        # 质量分析
-@agent-refactoring-expert "建议"     # 重构建议
-/sc:improve --preview               # 预览改进
-/sc:test --coverage                 # 验证测试
+# 1. 全面分析
+/sc:analyze . @agent-quality-engineer @agent-refactoring-expert --focus quality --systematic --trace
+
+# 2. 制定重构计划
+/sc:workflow "重构计划" @agent-refactoring-expert --think-hard
+
+# 3. 分阶段优化
+/sc:improve . @agent-refactoring-expert --focus maintainability --with-tests --preview
+/sc:save "重构检查点"  # 保存进度
+
+# 4. 验证改进
+/sc:test --coverage --systematic
+/sc:analyze . --focus quality  # 对比优化前后
+```
+
+### 安全加固流程
+```bash
+# 1. 安全审计
+/sc:analyze . @agent-security-engineer --focus security --systematic --trace --validate
+
+# 2. 漏洞修复
+/sc:improve "安全加固" @agent-security-engineer @agent-backend-architect --safe-mode --with-tests
+
+# 3. 合规验证
+/sc:test --focus security --validate
+/sc:document "安全报告" @agent-technical-writer
 ```
 
 ---
@@ -406,7 +648,7 @@ sc 优化数据库查询
 
 # 输出
 🎓 SuperClaude v4 指令转换
-/sc:improve "数据库查询优化" @agent-backend-architect @agent-performance-engineer --seq --think-hard
+/sc:improve "数据库查询优化" @agent-backend-architect @agent-performance-engineer --seq --ultrathink --systematic
 （只是告诉你指令，不会真的去优化）
 ```
 

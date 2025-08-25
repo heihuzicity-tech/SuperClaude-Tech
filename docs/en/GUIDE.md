@@ -86,31 +86,31 @@ Output: [Claude directly optimizes your code]
 ### 1. Performance Optimization
 ```bash
 sc my website is slow
-→ /sc:troubleshoot "website performance issues" @agent-performance-engineer --seq --think-hard
+→ /sc:troubleshoot "website performance bottleneck diagnosis" @agent-performance-engineer @agent-frontend-architect @agent-root-cause-analyst --seq --play --think-hard
 ```
 
 ### 2. Security Implementation
 ```bash
-sc add user authentication
-→ /sc:implement "user authentication system" @agent-security-engineer --c7 --safe-mode
+sc build login system
+→ /sc:implement "user login authentication system" @agent-security-engineer @agent-backend-architect --c7 --safe-mode --with-tests
 ```
 
 ### 3. UI Development
 ```bash
 sc create responsive navbar
-→ /sc:implement "responsive navigation component" @agent-frontend-architect --magic
+→ /sc:implement "responsive navigation component" @agent-frontend-architect --magic --c7 --focus accessibility
 ```
 
 ### 4. Bug Fixing
 ```bash
-sc debug WebSocket connection
-→ /sc:troubleshoot "WebSocket connection issues" @agent-root-cause-analyst --verbose
+sc fix this bug
+→ /sc:troubleshoot "bug diagnosis and fix" @agent-root-cause-analyst --seq --verbose
 ```
 
 ### 5. Code Review
 ```bash
-sc review my code quality
-→ /sc:analyze . @agent-quality-engineer --focus quality --think-hard
+sc analyze code quality
+→ /sc:analyze . @agent-quality-engineer @agent-refactoring-expert --seq --think-hard --focus quality
 ```
 
 ## 🔄 Workflows

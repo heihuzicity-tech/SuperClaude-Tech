@@ -31,17 +31,17 @@
 #### 11个专业Personas
 | Persona | 专业领域 | 使用场景 |
 |---------|----------|----------|
-| `--persona-architect` | 🏗️ 系统架构专家 | 系统设计、架构规划、技术选型 |
-| `--persona-frontend` | 🎨 前端UI/UX专家 | 界面开发、用户体验、响应式设计 |
-| `--persona-backend` | ⚙️ 后端工程师 | 服务端开发、API设计、数据库优化 |
-| `--persona-security` | 🛡️ 安全专家 | 安全审计、漏洞分析、威胁建模 |
-| `--persona-performance` | ⚡ 性能优化专家 | 性能分析、瓶颈定位、优化方案 |
-| `--persona-analyzer` | 🔍 根因分析专家 | 问题诊断、故障排查、系统调试 |
-| `--persona-qa` | 🧪 质量保证专家 | 测试策略、质量控制、自动化测试 |
-| `--persona-devops` | 🚀 DevOps专家 | CI/CD、部署自动化、监控告警 |
-| `--persona-refactorer` | 🔧 代码重构专家 | 代码质量、技术债务、重构方案 |
-| `--persona-mentor` | 👨‍🏫 技术导师 | 知识传授、最佳实践、技术指导 |
-| `--persona-scribe` | ✍️ 文档专家 | 技术文档、API文档、用户手册 |
+| `@agent-system-architect` | 🏗️ 系统架构专家 | 系统设计、架构规划、技术选型 |
+| `@agent-frontend-architect` | 🎨 前端UI/UX专家 | 界面开发、用户体验、响应式设计 |
+| `@agent-backend-architect` | ⚙️ 后端工程师 | 服务端开发、API设计、数据库优化 |
+| `@agent-security-engineer` | 🛡️ 安全专家 | 安全审计、漏洞分析、威胁建模 |
+| `@agent-performance-engineer` | ⚡ 性能优化专家 | 性能分析、瓶颈定位、优化方案 |
+| `@agent-root-cause-analyst` | 🔍 根因分析专家 | 问题诊断、故障排查、系统调试 |
+| `@agent-quality-engineer` | 🧪 质量保证专家 | 测试策略、质量控制、自动化测试 |
+| `@agent-devops-architect` | 🚀 DevOps专家 | CI/CD、部署自动化、监控告警 |
+| `@agent-refactoring-expert` | 🔧 代码重构专家 | 代码质量、技术债务、重构方案 |
+| `@agent-socratic-mentor` | 👨‍🏫 技术导师 | 知识传授、最佳实践、技术指导 |
+| `@agent-technical-writer` | ✍️ 文档专家 | 技术文档、API文档、用户手册 |
 
 ### 3. 思考深度控制
 根据问题复杂度选择合适的分析深度。
@@ -69,61 +69,61 @@
 ### 故障排查
 ```bash
 # 调试登录问题
-/troubleshoot "用户登录后session丢失" --persona-backend --think-hard
+/troubleshoot "用户登录后session丢失" @agent-backend-architect --think-hard
 
 # 分析性能瓶颈
-/troubleshoot "页面加载超过5秒" --persona-performance --seq --think-hard
+/troubleshoot "页面加载超过5秒" @agent-performance-engineer --seq --think-hard
 
 # WebSocket连接问题
-/troubleshoot "WebSocket连接频繁断开" --persona-backend --persona-analyzer --trace
+/troubleshoot "WebSocket连接频繁断开" @agent-backend-architect @agent-root-cause-analyst --trace
 ```
 
 ### 功能实现
 ```bash
 # 实现暗黑模式
-/implement "添加暗黑模式切换功能" --persona-frontend --with-tests
+/implement "添加暗黑模式切换功能" @agent-frontend-architect --with-tests
 
 # 开发认证系统
-/implement "JWT认证系统" --persona-backend --persona-security --safe
+/implement "JWT认证系统" @agent-backend-architect @agent-security-engineer --safe
 
 # 创建响应式布局
-/implement "响应式导航栏" --persona-frontend --magic
+/implement "响应式导航栏" @agent-frontend-architect --magic
 ```
 
 ### 性能优化
 ```bash
 # 优化首页加载
-/improve "优化首页加载速度" --persona-performance --systematic
+/improve "优化首页加载速度" @agent-performance-engineer --systematic
 
 # 数据库查询优化
-/improve "优化复杂查询性能" --persona-backend --persona-performance --think-hard
+/improve "优化复杂查询性能" @agent-backend-architect @agent-performance-engineer --think-hard
 
 # 前端渲染优化
-/improve "React组件渲染性能" --persona-frontend --persona-performance --magic
+/improve "React组件渲染性能" @agent-frontend-architect @agent-performance-engineer --magic
 ```
 
 ### 安全审计
 ```bash
 # 审查认证流程
-/analyze "审查用户认证流程" --persona-security --think-hard --safe
+/analyze "审查用户认证流程" @agent-security-engineer --think-hard --safe
 
 # 漏洞扫描
-/analyze "检查SQL注入漏洞" --persona-security --persona-backend --systematic
+/analyze "检查SQL注入漏洞" @agent-security-engineer @agent-backend-architect --systematic
 
 # 安全加固
-/improve "加强API安全性" --persona-security --with-tests --validate
+/improve "加强API安全性" @agent-security-engineer --with-tests --validate
 ```
 
 ### 代码分析
 ```bash
 # 架构评审
-/analyze "评审微服务架构" --persona-architect --think-hard
+/analyze "评审微服务架构" @agent-system-architect --think-hard
 
 # 代码质量检查
-/analyze "检查代码质量和技术债务" --persona-refactorer --systematic
+/analyze "检查代码质量和技术债务" @agent-refactoring-expert --systematic
 
 # 依赖分析
-/analyze "分析项目依赖关系" --persona-architect --persona-analyzer
+/analyze "分析项目依赖关系" @agent-system-architect @agent-root-cause-analyst
 ```
 
 ## 🌊 高级功能
@@ -174,20 +174,31 @@ Wave模式用于处理大型复杂任务，自动将任务分解为多个协调�
 
 ```bash
 # 前后端联合分析
-/analyze "分析全栈应用性能" --persona-frontend --persona-backend --persona-performance --think-hard
+/analyze "分析全栈应用性能" @agent-frontend-architect @agent-backend-architect @agent-performance-engineer --think-hard
 
 # 安全性能平衡
-/improve "优化加密算法" --persona-security --persona-performance --ultrathink
+/improve "优化加密算法" @agent-security-engineer @agent-performance-engineer --ultrathink
 ```
 
 ### 2. 智能转换模式
 使用自然语言描述，系统会自动转换为最优SuperClaude指令：
 
-- **输入**: "帮我看看为什么API响应这么慢"
-- **转换**: `/troubleshoot "API响应延迟问题" --persona-performance --persona-backend --think-hard`
+#### 实际测试示例
 
-- **输入**: "全面优化整个微服务架构"
-- **转换**: `/improve "微服务架构优化" --persona-architect --wave-mode auto --wave-strategy enterprise`
+- **输入**: `sc 网站访问很慢`
+- **转换**: `/sc:troubleshoot "网站访问性能问题诊断" @agent-performance-engineer @agent-frontend-architect @agent-root-cause-analyst --seq --play --think-hard`
+
+- **输入**: `sc 做个登录系统`
+- **转换**: `/sc:implement "用户登录认证系统" @agent-security-engineer @agent-backend-architect --c7 --safe-mode --with-tests`
+
+- **输入**: `sc 修复这个bug`
+- **转换**: `/sc:troubleshoot "bug诊断与修复" @agent-root-cause-analyst --seq --verbose`
+
+- **输入**: `sc 创建REST API`
+- **转换**: `/sc:implement "RESTful API服务" @agent-backend-architect --c7 --with-tests`
+
+- **输入**: `sc 分析代码质量`
+- **转换**: `/sc:analyze . @agent-quality-engineer @agent-refactoring-expert --seq --think-hard --focus quality`
 
 ### 3. 任务复杂度评估
 根据任务特征选择合适的配置：
@@ -202,26 +213,26 @@ Wave模式用于处理大型复杂任务，自动将任务分解为多个协调�
 
 #### 前端开发
 ```bash
-/implement "响应式组件" --persona-frontend --magic --with-tests
-/improve "渲染性能" --persona-frontend --persona-performance --play
+/implement "响应式组件" @agent-frontend-architect --magic --with-tests
+/improve "渲染性能" @agent-frontend-architect @agent-performance-engineer --play
 ```
 
 #### 后端开发
 ```bash
-/implement "RESTful API" --persona-backend --c7 --with-tests
-/troubleshoot "数据库死锁" --persona-backend --persona-analyzer --seq
+/implement "RESTful API" @agent-backend-architect --c7 --with-tests
+/troubleshoot "数据库死锁" @agent-backend-architect @agent-root-cause-analyst --seq
 ```
 
 #### 全栈开发
 ```bash
-/build "用户管理系统" --persona-frontend --persona-backend --wave-mode auto
-/analyze "全栈性能" --persona-performance --all-mcp --think-hard
+/build "用户管理系统" @agent-frontend-architect @agent-backend-architect --wave-mode auto
+/analyze "全栈性能" @agent-performance-engineer --all-mcp --think-hard
 ```
 
 #### DevOps
 ```bash
-/implement "CI/CD流水线" --persona-devops --systematic
-/improve "部署流程" --persona-devops --persona-security --safe
+/implement "CI/CD流水线" @agent-devops-architect --systematic
+/improve "部署流程" @agent-devops-architect @agent-security-engineer --safe
 ```
 
 ## 📝 快速参考
@@ -259,10 +270,10 @@ Wave模式用于处理大型复杂任务，自动将任务分解为多个协调�
 /analyze "分析目标" --think-hard --systematic
 
 # 安全开发
-/implement "安全功能" --persona-security --safe --validate
+/implement "安全功能" @agent-security-engineer --safe --validate
 
 # 性能调优
-/improve "优化目标" --persona-performance --think-hard
+/improve "优化目标" @agent-performance-engineer --think-hard
 
 # 企业级任务
 /build "大型系统" --wave-mode force --wave-strategy enterprise
