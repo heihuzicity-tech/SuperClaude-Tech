@@ -2,22 +2,20 @@
 
 <div align="center">
 
-[English](#english) | [中文](#中文)
-
 [![Version](https://img.shields.io/badge/version-4.0.8-blue)](https://github.com/yourusername/SuperClaude-Tech)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+**[English](README.md) | [简体中文](README.zh-CN.md)**
 
 </div>
 
 ---
 
-## English
-
-### 🌟 Transform Natural Language into Powerful SuperClaude Commands
+## 🌟 Transform Natural Language into Powerful SuperClaude Commands
 
 SuperClaude-Tech is an intelligent instruction translation system that converts your natural language requests into precise SuperClaude Framework commands, unleashing the full potential of Claude Code without memorizing complex syntax.
 
-### 🎯 Why SuperClaude-Tech?
+## 🎯 Why SuperClaude-Tech?
 
 The SuperClaude v4 Framework is incredibly powerful, but:
 - **21 commands, 14 AI agents, 6 MCP servers** - Too much to remember
@@ -29,108 +27,126 @@ SuperClaude-Tech solves this by:
 - **Intelligent agent selection** based on your task
 - **Simple `sc` activation** - Just one code to remember
 
-### 🚀 Quick Start
+## 🚀 Quick Start
 
-1. **Install**: Copy configuration to your Claude Code
-   - Global: `~/.claude/CLAUDE.md`
-   - Project: `/your-project/CLAUDE.md`
+### Installation
 
-2. **Use**: Just add `sc` before your request
+1. **Global Configuration**
    ```bash
-   sc optimize my website performance
-   → /sc:troubleshoot "website performance optimization" @agent-performance-engineer --seq --think-hard
+   # Copy CLAUDE.md to your global Claude Code config
+   ~/.claude/CLAUDE.md
    ```
 
-### 📖 Documentation
+2. **Project Configuration**
+   ```bash
+   # Or place it in your project root
+   /your-project/CLAUDE.md
+   ```
 
-- [Core Configuration](./docs/en/CLAUDE.md) - Complete prompt configuration
-- [User Guide](./docs/en/GUIDE.md) - Detailed usage instructions
+### Usage
 
-### 💡 Examples
+Just add `sc` before your request:
+
+```bash
+sc optimize my website performance
+→ /sc:troubleshoot "website performance optimization" @agent-performance-engineer --seq --think-hard
+```
+
+Without `sc`, Claude executes tasks directly:
+
+```bash
+optimize my website performance
+→ [Claude directly optimizes your code]
+```
+
+## 💡 Examples
 
 | Your Request | Generated Command |
 |-------------|-------------------|
 | `sc my site is slow` | `/sc:troubleshoot "performance issues" @agent-performance @agent-frontend --seq` |
 | `sc build login system` | `/sc:implement "auth system" @agent-security @agent-backend --safe-mode` |
 | `sc fix this bug` | `/sc:troubleshoot "bug fix" @agent-root-cause --verbose` |
+| `sc create REST API` | `/sc:implement "RESTful API" @agent-backend --c7 --with-tests` |
+| `sc analyze code quality` | `/sc:analyze . @agent-quality --think-hard --focus quality` |
 
-### 🙏 Acknowledgments
+## 📖 Documentation
 
-Based on the excellent [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework). Special thanks to the original authors!
+- **[Core Configuration](./docs/en/CLAUDE.md)** - Complete prompt configuration
+- **[User Guide](./docs/en/GUIDE.md)** - Detailed usage instructions
+- **[中文文档](README.zh-CN.md)** - Chinese documentation
 
----
+## 🎓 Key Features
 
-## 中文
+### 21 Commands
+Core commands like `/sc:implement`, `/sc:analyze`, `/sc:troubleshoot`, `/sc:improve`, and more
 
-### 🌟 将自然语言转换为强大的SuperClaude指令
+### 14 AI Agents
+Specialized experts including:
+- `@agent-security-engineer` - Security & authentication
+- `@agent-performance-engineer` - Performance optimization
+- `@agent-frontend-architect` - UI/UX & frontend
+- `@agent-backend-architect` - Backend & APIs
+- And 10 more specialists
 
-SuperClaude-Tech 是一个智能指令转换系统，将您的自然语言请求转换为精确的SuperClaude框架指令，无需记忆复杂语法即可释放Claude Code的全部潜能。
+### 6 MCP Servers
+- `context7` - Official documentation
+- `sequential-thinking` - Complex analysis
+- `magic` - UI component generation
+- `playwright` - Browser testing
+- And more
 
-### 🎯 为什么选择SuperClaude-Tech？
+### Intelligent Features
+- **Auto-agent activation** based on keywords
+- **Complexity assessment** for optimal command selection
+- **Thinking depth control** (`--think`, `--think-hard`, `--think-deep`)
 
-SuperClaude v4框架功能极其强大，但是：
-- **21个命令、14个AI代理、6个MCP服务器** - 记忆负担太大
-- **不知道什么场景该用什么指令** - 选择困难，效率低下
-- **新手很难掌握最佳实践** - 学习曲线陡峭
+## 🔧 Advanced Usage
 
-SuperClaude-Tech通过以下方式解决这些问题：
-- **自然语言输入** → **最佳SuperClaude指令**
-- **基于任务智能选择代理**
-- **简单的`sc`激活码** - 只需记住一个暗号
+### Combining Multiple Agents
+```bash
+sc build secure payment system
+→ /sc:implement "payment system" @agent-security @agent-backend @agent-database --safe-mode --with-tests
+```
 
-### 🚀 快速开始
+### Deep Analysis
+```bash
+sc analyze architecture problems
+→ /sc:analyze . @agent-system-architect @agent-quality --think-deep --focus architecture
+```
 
-1. **安装**：复制配置到您的Claude Code
-   - 全局配置：`~/.claude/CLAUDE.md`
-   - 项目配置：`/项目目录/CLAUDE.md`
+### Workflow Automation
+```bash
+sc create full development workflow
+→ /sc:workflow "development pipeline" @agent-devops --c7 --verbose
+```
 
-2. **使用**：在请求前加上`sc`即可
-   ```bash
-   sc 优化我的网站性能
-   → /sc:troubleshoot "网站性能优化" @agent-performance-engineer --seq --think-hard
-   ```
+## 🎯 Remember
 
-### 📖 文档
+> **Want SuperClaude commands? Add `sc`**  
+> **Want direct execution? No `sc`**
+> 
+> *It's that simple!*
 
-- [核心配置](./docs/zh-CN/CLAUDE.md) - 完整的提示词配置
-- [使用指南](./docs/zh-CN/GUIDE.md) - 详细的使用说明
+## 🙏 Acknowledgments
 
-### 💡 示例
+Based on the excellent [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework). Special thanks to the original authors for their outstanding contribution!
 
-| 您的请求 | 生成的指令 |
-|---------|-----------|
-| `sc 网站很慢` | `/sc:troubleshoot "性能问题" @agent-performance @agent-frontend --seq` |
-| `sc 做个登录系统` | `/sc:implement "认证系统" @agent-security @agent-backend --safe-mode` |
-| `sc 修复这个bug` | `/sc:troubleshoot "bug修复" @agent-root-cause --verbose` |
+## 📝 License
 
-### 🙏 致谢
+MIT License - See [LICENSE](LICENSE) for details
 
-基于优秀的 [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) 开发，感谢原作者的杰出贡献！
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 👨‍💻 Author
+
+Created with ❤️ by 黑胡子 (Blackbeard)
 
 ---
 
 <div align="center">
 
-### 🎯 Remember / 记住
-
-**English**: Want SuperClaude commands? Add `sc`  
-**中文**：想要SuperClaude指令？加 `sc`
-
-*It's that simple! / 就这么简单！*
+**[⭐ Star this project](https://github.com/yourusername/SuperClaude-Tech)** if you find it helpful!
 
 </div>
-
----
-
-## License / 许可证
-
-MIT
-
-## Contributing / 贡献
-
-Contributions are welcome! Please feel free to submit a Pull Request.  
-欢迎贡献！请随时提交Pull Request。
-
-## Author / 作者
-
-Created with ❤️ by [黑胡子]
